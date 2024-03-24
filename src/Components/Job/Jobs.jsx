@@ -1,8 +1,9 @@
 import { MdLocationOn } from "react-icons/md";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const Jobs = ({job}) => {
-    const {logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job;
+    const {id,logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job;
     return (
         <div className="card card-compact  bg-base-100 shadow-xl">
   <figure><img src={logo} alt="Shoes" /></figure>
@@ -18,7 +19,7 @@ const Jobs = ({job}) => {
         <h2 className="flex gap-1 items-center"><HiOutlineCurrencyDollar className="text-2xl"></HiOutlineCurrencyDollar>{salary}</h2>
     </div>
     <div className="card-actions ">
-      <button className="btn btn-primary">view details</button>
+      <Link to={`/job/${id}`}><button className="btn btn-primary">view details</button></Link>
     </div>
   </div>
 </div>
